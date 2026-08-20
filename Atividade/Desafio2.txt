@@ -1,0 +1,46 @@
+﻿namespace Lista
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> Lista = new List<int>();
+            int Multiplicacao = 1;
+
+            while (true)
+            {
+                Console.WriteLine("Digite um número (0 para parar):");
+                int NumAdd = Convert.ToInt32(Console.ReadLine());
+                Lista.Add(NumAdd);
+
+                if (NumAdd == 0)
+                {
+                    break;
+                }
+                foreach (var item in Lista)
+                {
+                    if (item == 0)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Multiplicacao *= item;
+                    }
+                }
+
+                Lista.Order();
+                Lista.RemoveAt(Lista.Count() - 1);
+
+                int MaiorNum = Lista.Max();
+                Console.WriteLine("O maior número é:" + string.Join(", ", MaiorNum));
+                int MenorNum = Lista.Max();
+                Console.WriteLine("O menor número é:" + string.Join(", ", MenorNum));
+
+                int SomaLista = Lista.Sum();
+                Console.WriteLine("A soma dos números é:" + SomaLista);
+                Console.WriteLine("A multiplicação dos números é:" + Multiplicacao);
+            }
+        }
+    }
+}
