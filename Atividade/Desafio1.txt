@@ -1,0 +1,44 @@
+﻿namespace Lista
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> Lista = new List<int>();
+            List<int> ListaPar = new List<int>();
+            List<int> ListaImp = new List<int>();
+
+            while(true)
+            {
+                Console.WriteLine("Digite números para a lista (0 para parar)");
+                int NumAdd = Convert.ToInt32(Console.ReadLine());
+
+                if (NumAdd == 0)
+                {
+                    break;
+                }
+
+                Lista.Add(NumAdd);
+
+                foreach (var item in Lista)
+                {
+                    if (item % 2 == 0)
+                    {
+                        ListaPar.Add(item);
+                    }
+                    else
+                    {
+                        ListaImp.Add(item);
+                    }
+
+                    Lista.Order();
+                    Console.WriteLine("A lista está em ordem crescente:" + string.Join(", ", Lista));
+
+                    int SomaLista = Lista.Sum();
+                    Console.WriteLine("A soma dos números é de:\n " + SomaLista);
+
+                }
+            }
+        }
+    }
+}
