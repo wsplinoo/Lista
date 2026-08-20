@@ -1,0 +1,22 @@
+﻿namespace Lista
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<double> P1 = new List<double> { 7.0, 4.0, 8.5, 3.0, 5.5};
+            List<double> P2 = new List<double> { 9.0, 5.0, 10, 7.5, 6.5 };
+
+            double mediaP1 = P1.Sum() / P2.Count;
+            double mediaP2 = P2.Sum() / P2.Count;
+
+            if (mediaP1 > mediaP2)
+            {
+                Console.WriteLine("A turma foi melhor na primeira prova.");
+            } else
+            {
+                Console.WriteLine("A turma foi melhor na segunda prova.");
+            }
+        }
+    }
+}
