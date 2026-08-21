@@ -1,0 +1,35 @@
+﻿namespace Lista
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> Palavra = new List<string>();
+
+            while (true) {
+                Console.WriteLine("Escreva uma palavra para adicionar (0 para parar)");
+
+                string QntdPalavras = Console.ReadLine().ToLower();
+
+                if (QntdPalavras == "0")
+                {
+                    break;
+                    Palavra.Add(QntdPalavras);
+                }
+                Console.WriteLine("Peça a palvra que você quer contar");
+
+                string ContarPalavra = Console.ReadLine().ToLower();
+                bool EncontrarPalavra = Palavra.Any(p => p.ToLower() == ContarPalavra);
+                int PalavraEncontrada = Palavra.Count(p => p.ToLower() == ContarPalavra);
+
+                if (EncontrarPalavra)
+                {
+                    Console.WriteLine("Apareceu \" + PalavraEncontrada");
+                } else
+                {
+                    Console.WriteLine("Escolha uma palavra da lista");
+                }
+            }
+        }
+    }
+}
